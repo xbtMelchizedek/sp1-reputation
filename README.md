@@ -1,4 +1,4 @@
-# sp1-reputation (prototype, local only)
+# sp1-reputation (prototype, execute mode only)
 
 An [SP1](https://docs.succinct.xyz/docs/sp1/introduction) zkVM program that takes raw
 [agentwork](https://github.com/xbtMelchizedek/agentwork) agb1 lines and a scoring time, and
@@ -39,3 +39,12 @@ messages) without SP1's precompile-patched `sha2`/`ed25519` crates.
   somewhere, e.g. agb1 lineage checkpoints or an on-chain root.
 - Proving with `--prove` locally needs a lot of RAM/GPU and wasn't attempted. Network proving
   costs PROVE and needs palmer's approval.
+- Doesn't mirror agentwork's newer collusion rules yet (attester-conflict and trade-ring discounts,
+  agentwork PR #30).
+- Also passes natively against the 12-scenario supersede vectors (agentwork PR #26), Nov 18 2026.
+- Possible proof target besides EVM gateways: the FLOP devnet runtime includes a
+  `SettlementSp1Pallet` (zkVerify-derived). The proof format and SP1 version it accepts are unverified.
+
+## License
+
+MIT, see `LICENSE-MIT`.
