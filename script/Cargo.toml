@@ -1,0 +1,20 @@
+[package]
+version = "0.1.0"
+name = "agb-rep-script"
+edition = "2021"
+default-run = "rep"
+
+[[bin]]
+name = "rep"
+path = "src/bin/main.rs"
+
+[dependencies]
+sp1-sdk = { version = "6.0.1", features = ["blocking"] }
+serde_json = "1.0"
+clap = { version = "4.0", features = ["derive", "env"] }
+hex = "0.4.3"
+alloy-sol-types = { workspace = true }
+agb-rep = { path = "../lib" }
+
+[build-dependencies]
+sp1-build = { version = "6.0.1" }
